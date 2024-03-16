@@ -1,3 +1,4 @@
+from sre_constants import JUMP
 from tkinter import *
 from bs4 import BeautifulSoup
 import requests
@@ -31,8 +32,10 @@ class EX:
             parsed_data += p.get_text() + ' '
 
         topl = Toplevel()
-        label = Label(topl, text=parsed_data)
+        label = Label(topl, text=parsed_data, width=150)
         label.pack()
+        scrolly = Scrollbar(topl, orient=VERTICAL, width=18)
+        scrolly.pack(side=RIGHT, fill=Y)
             
         
         
